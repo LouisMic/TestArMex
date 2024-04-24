@@ -1,9 +1,9 @@
-<div class="m-3">
+<div class="m-5 text-center">
   <%= form_tag import_path, method: :post, multipart: true do %>
     <%= file_field_tag :file, accept: ".csv" %>
     <%= submit_tag 'Import' %>
   <% end %>
 </div>
-<div class="m-3">
-  <%= link_to "Statistiques", bookings_index_path() %>
+<div class="m-5 text-center">
+  <%= link_to "Statistiques", bookings_path(), class: "btn btn-primary" %>
 </div>
