@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   root "bookings#new"
 
   post "import", to: "bookings#import"
-  get "bookings", to: "bookings#index"
+  get "shows", to: "shows#index"
+  post "shows", to: "shows#create"
 end

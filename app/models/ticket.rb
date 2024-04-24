@@ -8,7 +8,7 @@ class Ticket < ApplicationRecord
     sold: 2
   }
 
-  def self.price
-    Ticket.all.map(&:price).inject(:+).fdiv(Ticket.all.size)
-  end
+  # def self.price
+  #   Ticket.all.map(&:price).inject(:+).fdiv(Ticket.all.size)
+  # end
 end

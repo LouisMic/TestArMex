@@ -1,3 +1,6 @@
+<div class="alert">
+  <%= alert %>
+</div>
 <div class="m-5 text-center">
   <%= form_tag import_path, method: :post, multipart: true do %>
     <%= file_field_tag :file, accept: ".csv" %>
@@ -5,5 +8,5 @@
   <% end %>
 </div>
 <div class="m-5 text-center">
-  <%= link_to "Statistiques", bookings_path(), class: "btn btn-primary" %>
+  <%= link_to "Statistiques", shows_path(), class: "btn btn-primary" %>
 </div>

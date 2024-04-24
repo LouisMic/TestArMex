@@ -3,13 +3,17 @@ class BookingsController < ApplicationController
   end
 
   def import
-    CsvImport.new(params[:file]).call
+    if params[:file].nil?
+      raise_alert("Pas de fichier ajouté")
+    else
+      CsvImport.new(params[:file]).call
+    end
   end
 
-  def index
-    @bookings = Booking.all.size
-    @buyers = Booking.users.size
-    @median_age = Booking.users_age.inject(:+) / Booking.users_age.size
-    @avg_price = Ticket.price.round(2)
+  private
+
+  def raise_alert(message)
+    flash[:alert] = message
+    return redirect_to root_path()
   end
 end

@@ -1,5 +1,6 @@
 class CsvImport
   require "csv"
+  require "date"
 
   def initialize(file)
     @filepath = File.open(file)

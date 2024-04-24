@@ -1,0 +1,14 @@
+<div class="container" data-controller="filter-show">
+  <div class="row m-5 text-center">
+    <%= simple_form_for @show, data: { action:"submit->filter-show#filter" } do |f| %>
+      <%= f.input :name, label: false, collection: @shows, input_html: { data: { filter_show_target: "show" } } %>
+      <%= f.button :submit, "Filtrer pour un show", class:"btn btn-primary" %>
+    <% end %>
+  </div>
+  <div data-filter-show-target="results">
+    <%= render "results", show: @show %>
+  </div>
+  <div class="mt-5 text-center">
+    <%= link_to "Back to import", root_path(), class: "btn btn-secondary" %>
+  </div>
+</div>
